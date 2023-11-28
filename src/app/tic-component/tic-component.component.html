@@ -1,0 +1,32 @@
+<div *ngIf="winner==false && checkedbuttons()==false">
+<table class="tab">
+    <tr>
+        <td id="td1"><button id="1" class="button_design" (click)="myfunc1()"><p *ngIf=" check_btn1 && check1">{{rep1}}</p> </button></td>
+        <td id="td2"><button id="2" class="button_design" (click)="myfunc2()"><p *ngIf="check_btn2  && check2 ">{{rep2}}</p></button></td>
+        <td id="td3"><button id="3" class="button_design" (click)="myfunc3()"><p *ngIf="check_btn3 && check3">{{rep3}}</p></button></td>
+    </tr>
+    <tr>
+        <td id="td4"><button id="4" class="button_design" (click)="myfunc4()"><p *ngIf="check_btn4 && check4">{{rep4}}</p></button></td>
+        <td id="td5"><button id="5" class="button_design" (click)="myfunc5()"><p *ngIf="check_btn5 && check5">{{rep5}}</p></button></td>
+        <td id="td6"><button id="6" class="button_design" (click)="myfunc6()"><p *ngIf="check_btn6 && check6">{{rep6}}</p></button></td>
+    </tr>
+    <tr>
+        <td id="td7"><button id="7" class="button_design" (click)="myfunc7()"><p *ngIf="check_btn7 && check7">{{rep7}}</p></button></td>
+        <td id="td8"><button id="8" class="button_design" (click)="myfunc8()"><p *ngIf="check_btn8 && check8">{{rep8}}</p></button></td>
+        <td id="td9"><button id="9" class="button_design" (click)="myfunc9()"><p *ngIf="check_btn9 && check9">{{rep9}}</p></button></td>
+    </tr>
+</table>
+    <div *ngIf="display==true" class="pp">       
+        <p id="ppp"> Select who starts first</p>
+        <button id="btn1" class="btn_turn" (click)="btn_dis()" >X</button>
+        <button id="btn2" class="btn_turn" (click)="btn_dis1()" >O</button>
+    </div>
+</div>
+<div *ngIf="winner==true" class="result1">
+    <p>Game Over !<br> The winner is <br>{{player_winner}}</p>
+    <button (click)="reloadpage()" *ngIf="displaybutn==false" class="winnersbtn">Play again</button><button (click)="stoppage()" *ngIf="displaybutn==false" class="winnersbtn">Cancel</button>
+</div>
+<div *ngIf="checkedbuttons()" class="result">
+    <p>Game Over !<br> Their is No winner <br></p>
+    <button (click)="reloadpage()" *ngIf="displaybutn==false" class="drowbtn">Play again</button><button (click)="stoppage()" *ngIf="displaybutn==false" class="drowbtn">Cancel</button>
+</div>
